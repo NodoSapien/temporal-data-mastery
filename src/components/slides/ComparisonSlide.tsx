@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -37,7 +36,7 @@ const ComparisonSlide: React.FC<ComparisonSlideProps> = ({
           </table>
         </div>
       </Card>
-      <Card className="p-4 sm:p-6 lg:p-8 bg-green-50">
+      <Card className="p-4 sm:p-6 lg:p-8 bg-green-50 py-0">
         <CardHeader className="pb-4 sm:pb-6">
           <CardTitle className="text-green-800 text-xl sm:text-2xl lg:text-3xl text-center">Ventajas Clave de InfluxDB</CardTitle>
         </CardHeader>
