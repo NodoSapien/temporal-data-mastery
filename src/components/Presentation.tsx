@@ -264,66 +264,66 @@ const Presentation = () => {
     switch (slide.type) {
       case 'title':
         return (
-          <div className="flex flex-col items-center justify-center h-full text-center space-y-4 sm:space-y-6 lg:space-y-8 px-4">
-            <div className="flex items-center space-x-2 sm:space-x-4 mb-4 sm:mb-8">
-              <Database className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-blue-600" />
-              <Clock className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-green-600" />
+          <div className="flex flex-col items-center justify-center min-h-[70vh] text-center space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
+            <div className="flex items-center space-x-3 sm:space-x-6 mb-6 sm:mb-12">
+              <Database className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-blue-600" />
+              <Clock className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-green-600" />
             </div>
-            <div className="space-y-2 sm:space-y-4">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <div className="space-y-3 sm:space-y-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-gray-900 leading-tight">
                 {slide.titleLine1}
               </h1>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
                 {slide.titleLine2}
               </h2>
             </div>
-            <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-3xl">
+            <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-gray-600 max-w-5xl">
               {slide.subtitle}
             </p>
-            <div className="mt-6 sm:mt-12 flex flex-wrap justify-center gap-2 sm:gap-4">
-              <Badge variant="outline" className="text-sm sm:text-lg px-2 sm:px-4 py-1 sm:py-2">Time-Series Database</Badge>
-              <Badge variant="outline" className="text-sm sm:text-lg px-2 sm:px-4 py-1 sm:py-2">High Performance</Badge>
-              <Badge variant="outline" className="text-sm sm:text-lg px-2 sm:px-4 py-1 sm:py-2">NoSQL</Badge>
+            <div className="mt-8 sm:mt-16 flex flex-wrap justify-center gap-3 sm:gap-6">
+              <Badge variant="outline" className="text-base sm:text-xl lg:text-2xl px-4 sm:px-6 py-2 sm:py-3">Time-Series Database</Badge>
+              <Badge variant="outline" className="text-base sm:text-xl lg:text-2xl px-4 sm:px-6 py-2 sm:py-3">High Performance</Badge>
+              <Badge variant="outline" className="text-base sm:text-xl lg:text-2xl px-4 sm:px-6 py-2 sm:py-3">NoSQL</Badge>
             </div>
           </div>
         );
 
       case 'content':
         return (
-          <div className="space-y-4 sm:space-y-6 lg:space-y-8 px-4">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-8">{slide.title}</h1>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-              <Card className="p-3 sm:p-4 lg:p-6">
-                <CardHeader className="pb-3 sm:pb-4">
-                  <CardTitle className="flex items-center space-x-2 text-lg sm:text-xl">
-                    <Database className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 flex-shrink-0" />
+          <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-8 sm:mb-12">{slide.title}</h1>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+              <Card className="p-4 sm:p-6 lg:p-8">
+                <CardHeader className="pb-4 sm:pb-6">
+                  <CardTitle className="flex items-center space-x-3 text-xl sm:text-2xl lg:text-3xl">
+                    <Database className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-blue-600 flex-shrink-0" />
                     <span>Descripción</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 sm:space-y-3">
+                  <ul className="space-y-3 sm:space-y-4">
                     {slide.content.map((item: string, index: number) => (
-                      <li key={index} className="flex items-start space-x-2 sm:space-x-3">
-                        <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-sm sm:text-base text-gray-700">{item}</span>
+                      <li key={index} className="flex items-start space-x-3 sm:space-x-4">
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-base sm:text-lg lg:text-xl text-gray-700">{item}</span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
               </Card>
-              <Card className="p-3 sm:p-4 lg:p-6">
-                <CardHeader className="pb-3 sm:pb-4">
-                  <CardTitle className="flex items-center space-x-2 text-lg sm:text-xl">
-                    <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 flex-shrink-0" />
+              <Card className="p-4 sm:p-6 lg:p-8">
+                <CardHeader className="pb-4 sm:pb-6">
+                  <CardTitle className="flex items-center space-x-3 text-xl sm:text-2xl lg:text-3xl">
+                    <Zap className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-green-600 flex-shrink-0" />
                     <span>Características Clave</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 sm:space-y-3">
+                  <ul className="space-y-3 sm:space-y-4">
                     {slide.features.map((feature: string, index: number) => (
-                      <li key={index} className="flex items-start space-x-2 sm:space-x-3">
-                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm sm:text-base text-gray-700">{feature}</span>
+                      <li key={index} className="flex items-start space-x-3 sm:space-x-4">
+                        <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-green-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-base sm:text-lg lg:text-xl text-gray-700">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -335,20 +335,20 @@ const Presentation = () => {
 
       case 'detailed':
         return (
-          <div className="space-y-4 sm:space-y-6 lg:space-y-8 px-4">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-8">{slide.title}</h1>
-            <div className="grid gap-4 sm:gap-6 lg:gap-8">
+          <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-8 sm:mb-12">{slide.title}</h1>
+            <div className="grid gap-6 sm:gap-8 lg:gap-12">
               {slide.sections.map((section: any, index: number) => (
-                <Card key={index} className="p-3 sm:p-4 lg:p-6">
-                  <CardHeader className="pb-3 sm:pb-4">
-                    <CardTitle className="text-xl sm:text-2xl text-blue-600">{section.title}</CardTitle>
+                <Card key={index} className="p-4 sm:p-6 lg:p-8">
+                  <CardHeader className="pb-4 sm:pb-6">
+                    <CardTitle className="text-2xl sm:text-3xl lg:text-4xl text-blue-600">{section.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                       {section.points.map((point: string, idx: number) => (
-                        <div key={idx} className="flex items-start space-x-2 sm:space-x-3">
-                          <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm sm:text-base text-gray-700">{point}</span>
+                        <div key={idx} className="flex items-start space-x-3 sm:space-x-4">
+                          <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-green-600 mt-0.5 flex-shrink-0" />
+                          <span className="text-base sm:text-lg lg:text-xl text-gray-700">{point}</span>
                         </div>
                       ))}
                     </div>
@@ -361,15 +361,15 @@ const Presentation = () => {
 
       case 'comparison':
         return (
-          <div className="space-y-4 sm:space-y-6 lg:space-y-8 px-4">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-8">{slide.title}</h1>
-            <Card className="p-3 sm:p-4 lg:p-6">
+          <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-8 sm:mb-12">{slide.title}</h1>
+            <Card className="p-4 sm:p-6 lg:p-8">
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[600px]">
                   <thead>
                     <tr className="border-b-2 border-gray-200">
                       {slide.comparison.headers.map((header: string, index: number) => (
-                        <th key={index} className="text-left p-2 sm:p-4 font-semibold text-base sm:text-lg">
+                        <th key={index} className="text-left p-3 sm:p-4 lg:p-6 font-semibold text-lg sm:text-xl lg:text-2xl">
                           {header}
                         </th>
                       ))}
@@ -378,25 +378,25 @@ const Presentation = () => {
                   <tbody>
                     {slide.comparison.rows.map((row: string[], index: number) => (
                       <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
-                        <td className="p-2 sm:p-4 font-medium text-gray-900 text-sm sm:text-base">{row[0]}</td>
-                        <td className="p-2 sm:p-4 text-blue-600 font-medium text-sm sm:text-base">{row[1]}</td>
-                        <td className="p-2 sm:p-4 text-gray-600 text-sm sm:text-base">{row[2]}</td>
+                        <td className="p-3 sm:p-4 lg:p-6 font-medium text-gray-900 text-base sm:text-lg lg:text-xl">{row[0]}</td>
+                        <td className="p-3 sm:p-4 lg:p-6 text-blue-600 font-medium text-base sm:text-lg lg:text-xl">{row[1]}</td>
+                        <td className="p-3 sm:p-4 lg:p-6 text-gray-600 text-base sm:text-lg lg:text-xl">{row[2]}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
             </Card>
-            <Card className="p-3 sm:p-4 lg:p-6 bg-green-50">
-              <CardHeader className="pb-3 sm:pb-4">
-                <CardTitle className="text-green-800 text-lg sm:text-xl">Ventajas Clave de InfluxDB</CardTitle>
+            <Card className="p-4 sm:p-6 lg:p-8 bg-green-50">
+              <CardHeader className="pb-4 sm:pb-6">
+                <CardTitle className="text-green-800 text-xl sm:text-2xl lg:text-3xl">Ventajas Clave de InfluxDB</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   {slide.advantages.map((advantage: string, index: number) => (
-                    <div key={index} className="flex items-start space-x-2 sm:space-x-3">
-                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-800 text-sm sm:text-base">{advantage}</span>
+                    <div key={index} className="flex items-start space-x-3 sm:space-x-4">
+                      <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-green-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-800 text-base sm:text-lg lg:text-xl">{advantage}</span>
                     </div>
                   ))}
                 </div>
@@ -407,40 +407,40 @@ const Presentation = () => {
 
       case 'multi-comparison':
         return (
-          <div className="space-y-4 sm:space-y-6 lg:space-y-8 px-4">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-8">{slide.title}</h1>
-            <div className="grid gap-4 sm:gap-6">
+          <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-8 sm:mb-12">{slide.title}</h1>
+            <div className="grid gap-6 sm:gap-8">
               {slide.comparisons.map((comparison: any, index: number) => (
-                <Card key={index} className="p-3 sm:p-4 lg:p-6">
-                  <CardHeader className="pb-3 sm:pb-4">
-                    <CardTitle className="text-xl sm:text-2xl text-blue-600">{comparison.title}</CardTitle>
+                <Card key={index} className="p-4 sm:p-6 lg:p-8">
+                  <CardHeader className="pb-4 sm:pb-6">
+                    <CardTitle className="text-2xl sm:text-3xl lg:text-4xl text-blue-600">{comparison.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                      <div className="space-y-2 sm:space-y-3">
-                        <h4 className="font-semibold text-blue-600 flex items-center space-x-2 text-sm sm:text-base">
-                          <Database className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                      <div className="space-y-3 sm:space-y-4">
+                        <h4 className="font-semibold text-blue-600 flex items-center space-x-2 text-lg sm:text-xl lg:text-2xl">
+                          <Database className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 flex-shrink-0" />
                           <span>InfluxDB</span>
                         </h4>
-                        <ul className="space-y-1 sm:space-y-2">
+                        <ul className="space-y-2 sm:space-y-3">
                           {comparison.influx.map((item: string, idx: number) => (
-                            <li key={idx} className="flex items-start space-x-2 sm:space-x-3">
-                              <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                              <span className="text-gray-700 text-xs sm:text-sm">{item}</span>
+                            <li key={idx} className="flex items-start space-x-3 sm:space-x-4">
+                              <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-green-600 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-700 text-sm sm:text-base lg:text-lg">{item}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
-                      <div className="space-y-2 sm:space-y-3">
-                        <h4 className="font-semibold text-gray-600 flex items-center space-x-2 text-sm sm:text-base">
-                          <Database className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                      <div className="space-y-3 sm:space-y-4">
+                        <h4 className="font-semibold text-gray-600 flex items-center space-x-2 text-lg sm:text-xl lg:text-2xl">
+                          <Database className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 flex-shrink-0" />
                           <span>{comparison.title.replace("vs ", "")}</span>
                         </h4>
-                        <ul className="space-y-1 sm:space-y-2">
+                        <ul className="space-y-2 sm:space-y-3">
                           {comparison.other.map((item: string, idx: number) => (
-                            <li key={idx} className="flex items-start space-x-2 sm:space-x-3">
-                              <div className="w-3 h-3 sm:w-4 sm:h-4 border-2 border-gray-400 rounded-full mt-0.5 flex-shrink-0"></div>
-                              <span className="text-gray-600 text-xs sm:text-sm">{item}</span>
+                            <li key={idx} className="flex items-start space-x-3 sm:space-x-4">
+                              <div className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 border-2 border-gray-400 rounded-full mt-0.5 flex-shrink-0"></div>
+                              <span className="text-gray-600 text-sm sm:text-base lg:text-lg">{item}</span>
                             </li>
                           ))}
                         </ul>
@@ -455,25 +455,25 @@ const Presentation = () => {
 
       case 'advantages':
         return (
-          <div className="space-y-4 sm:space-y-6 lg:space-y-8 px-4">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-8">{slide.title}</h1>
-            <div className="grid gap-4 sm:gap-6">
+          <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-8 sm:mb-12">{slide.title}</h1>
+            <div className="grid gap-6 sm:gap-8">
               {slide.categories.map((category: any, index: number) => (
-                <Card key={index} className="p-3 sm:p-4 lg:p-6">
-                  <CardHeader className="pb-3 sm:pb-4">
-                    <CardTitle className="flex items-center space-x-2 sm:space-x-3 text-lg sm:text-xl lg:text-2xl">
-                      <div className="p-1 sm:p-2 bg-blue-100 rounded-lg text-blue-600 flex-shrink-0">
+                <Card key={index} className="p-4 sm:p-6 lg:p-8">
+                  <CardHeader className="pb-4 sm:pb-6">
+                    <CardTitle className="flex items-center space-x-3 sm:space-x-4 text-2xl sm:text-3xl lg:text-4xl">
+                      <div className="p-2 sm:p-3 lg:p-4 bg-blue-100 rounded-lg text-blue-600 flex-shrink-0">
                         {category.icon}
                       </div>
                       <span>Ventajas {category.title}</span>
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                       {category.advantages.map((advantage: string, idx: number) => (
-                        <div key={idx} className="flex items-start space-x-2 sm:space-x-3 p-2 sm:p-3 bg-gray-50 rounded-lg">
-                          <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700 text-xs sm:text-sm">{advantage}</span>
+                        <div key={idx} className="flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 lg:p-5 bg-gray-50 rounded-lg">
+                          <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-green-600 mt-0.5 flex-shrink-0" />
+                          <span className="text-gray-700 text-sm sm:text-base lg:text-lg">{advantage}</span>
                         </div>
                       ))}
                     </div>
@@ -486,23 +486,23 @@ const Presentation = () => {
 
       case 'use-cases':
         return (
-          <div className="space-y-4 sm:space-y-6 lg:space-y-8 px-4">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-8">{slide.title}</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-8 sm:mb-12">{slide.title}</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {slide.cases.map((useCase: any, index: number) => (
-                <Card key={index} className="p-3 sm:p-4 lg:p-6 hover:shadow-lg transition-shadow">
-                  <CardHeader className="text-center pb-3 sm:pb-4">
-                    <div className="mx-auto p-2 sm:p-3 lg:p-4 bg-gradient-to-br from-blue-500 to-green-500 rounded-full text-white mb-2 sm:mb-4 w-fit">
+                <Card key={index} className="p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-shadow">
+                  <CardHeader className="text-center pb-4 sm:pb-6">
+                    <div className="mx-auto p-3 sm:p-4 lg:p-6 bg-gradient-to-br from-blue-500 to-green-500 rounded-full text-white mb-4 sm:mb-6 w-fit">
                       {useCase.icon}
                     </div>
-                    <CardTitle className="text-lg sm:text-xl">{useCase.title}</CardTitle>
+                    <CardTitle className="text-xl sm:text-2xl lg:text-3xl">{useCase.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-1 sm:space-y-2">
+                    <ul className="space-y-2 sm:space-y-3">
                       {useCase.examples.map((example: string, idx: number) => (
-                        <li key={idx} className="flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-gray-700 text-xs sm:text-sm">{example}</span>
+                        <li key={idx} className="flex items-start space-x-2 sm:space-x-3">
+                          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm sm:text-base lg:text-lg">{example}</span>
                         </li>
                       ))}
                     </ul>
@@ -515,40 +515,40 @@ const Presentation = () => {
 
       case 'decision':
         return (
-          <div className="space-y-4 sm:space-y-6 lg:space-y-8 px-4">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-8">{slide.title}</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-              <Card className="p-3 sm:p-4 lg:p-6 border-green-200 bg-green-50">
-                <CardHeader className="pb-3 sm:pb-4">
-                  <CardTitle className="flex items-center space-x-2 text-green-800 text-lg sm:text-xl">
-                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+          <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-8 sm:mb-12">{slide.title}</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+              <Card className="p-4 sm:p-6 lg:p-8 border-green-200 bg-green-50">
+                <CardHeader className="pb-4 sm:pb-6">
+                  <CardTitle className="flex items-center space-x-3 text-green-800 text-xl sm:text-2xl lg:text-3xl">
+                    <CheckCircle className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 flex-shrink-0" />
                     <span>Cuándo SÍ usar InfluxDB</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 sm:space-y-3">
+                  <ul className="space-y-3 sm:space-y-4">
                     {slide.decision.choose.map((item: string, index: number) => (
-                      <li key={index} className="flex items-start space-x-2 sm:space-x-3">
-                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-800 text-sm sm:text-base">{item}</span>
+                      <li key={index} className="flex items-start space-x-3 sm:space-x-4">
+                        <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-green-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-800 text-base sm:text-lg lg:text-xl">{item}</span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
               </Card>
-              <Card className="p-3 sm:p-4 lg:p-6 border-red-200 bg-red-50">
-                <CardHeader className="pb-3 sm:pb-4">
-                  <CardTitle className="flex items-center space-x-2 text-red-800 text-lg sm:text-xl">
-                    <XCircle className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+              <Card className="p-4 sm:p-6 lg:p-8 border-red-200 bg-red-50">
+                <CardHeader className="pb-4 sm:pb-6">
+                  <CardTitle className="flex items-center space-x-3 text-red-800 text-xl sm:text-2xl lg:text-3xl">
+                    <XCircle className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 flex-shrink-0" />
                     <span>Cuándo considerar alternativas</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 sm:space-y-3">
+                  <ul className="space-y-3 sm:space-y-4">
                     {slide.decision.avoid.map((item: string, index: number) => (
-                      <li key={index} className="flex items-start space-x-2 sm:space-x-3">
-                        <XCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-800 text-sm sm:text-base">{item}</span>
+                      <li key={index} className="flex items-start space-x-3 sm:space-x-4">
+                        <XCircle className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-red-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-800 text-base sm:text-lg lg:test-xl">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -560,23 +560,23 @@ const Presentation = () => {
 
       case 'future':
         return (
-          <div className="space-y-4 sm:space-y-6 lg:space-y-8 px-4">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-8">{slide.title}</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-8 sm:mb-12">{slide.title}</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {slide.future.map((item: any, index: number) => (
-                <Card key={index} className="p-3 sm:p-4 lg:p-6 hover:shadow-lg transition-shadow">
-                  <CardHeader className="pb-3 sm:pb-4">
-                    <CardTitle className="text-lg sm:text-xl text-blue-600">{item.title}</CardTitle>
+                <Card key={index} className="p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-shadow">
+                  <CardHeader className="pb-4 sm:pb-6">
+                    <CardTitle className="text-xl sm:text-2xl lg:text-3xl text-blue-600">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-700 text-sm sm:text-base">{item.description}</p>
+                    <p className="text-gray-700 text-base sm:text-lg lg:text-xl">{item.description}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
-            <Card className="p-3 sm:p-4 lg:p-6 bg-gradient-to-r from-blue-500 to-green-500 text-white">
+            <Card className="p-4 sm:p-6 lg:p-8 bg-gradient-to-r from-blue-500 to-green-500 text-white">
               <CardContent className="text-center">
-                <p className="text-lg sm:text-xl font-semibold">{slide.stats}</p>
+                <p className="text-xl sm:text-2xl lg:text-3xl font-semibold">{slide.stats}</p>
               </CardContent>
             </Card>
           </div>
@@ -584,27 +584,27 @@ const Presentation = () => {
 
       case 'conclusion':
         return (
-          <div className="flex flex-col justify-center h-full space-y-4 sm:space-y-6 lg:space-y-8 px-4">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-8 text-center">Conclusión</h1>
-            <div className="space-y-3 sm:space-y-4 lg:space-y-6 max-w-4xl mx-auto">
+          <div className="flex flex-col justify-center min-h-[70vh] space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">Conclusión</h1>
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8 max-w-6xl mx-auto">
               {slide.points.map((point: string, index: number) => (
-                <Card key={index} className="p-3 sm:p-4 lg:p-6 hover:shadow-lg transition-shadow">
-                  <CardContent className="flex items-start space-x-3 sm:space-x-4">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-base">
+                <Card key={index} className="p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-shadow">
+                  <CardContent className="flex items-start space-x-4 sm:space-x-6">
+                    <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-500 to-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl lg:text-2xl">
                       {index + 1}
                     </div>
-                    <p className="text-base sm:text-lg text-gray-700 leading-relaxed">{point}</p>
+                    <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-gray-700 leading-relaxed">{point}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
-            <div className="text-center mt-6 sm:mt-8 lg:mt-12">
-              <div className="flex items-center justify-center space-x-2 sm:space-x-4">
-                <Database className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-blue-600" />
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">InfluxDB</h2>
-                <Clock className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-green-600" />
+            <div className="text-center mt-8 sm:mt-12 lg:mt-16">
+              <div className="flex items-center justify-center space-x-3 sm:space-x-6">
+                <Database className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-blue-600" />
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900">InfluxDB</h2>
+                <Clock className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-green-600" />
               </div>
-              <p className="text-lg sm:text-xl text-gray-600 mt-2 sm:mt-4">El futuro de las bases de datos temporales</p>
+              <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-gray-600 mt-4 sm:mt-6">El futuro de las bases de datos temporales</p>
             </div>
           </div>
         );
@@ -618,7 +618,7 @@ const Presentation = () => {
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-25">
       {/* Header with navigation */}
       <div className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 p-2 sm:p-4">
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
+        <div className="flex items-center justify-between max-w-full mx-auto">
           <div className="flex items-center space-x-2 sm:space-x-4">
             <Database className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600" />
             <h1 className="text-lg sm:text-xl font-bold text-gray-900 hidden sm:block">InfluxDB Presentation</h1>
@@ -654,31 +654,27 @@ const Presentation = () => {
         </div>
       </div>
 
-      {/* Main content with responsive aspect ratio */}
-      <div className="pt-12 sm:pt-16 lg:pt-20 pb-12 sm:pb-16 px-2 sm:px-4 lg:px-8 flex items-center justify-center min-h-screen">
+      {/* Main content without fixed height container */}
+      <div className="pt-16 sm:pt-20 pb-20 sm:pb-24">
         <div className="w-full max-w-7xl mx-auto">
-          <div className="w-full">
-            <div className="h-[calc(100vh-8rem)] sm:h-[calc(100vh-10rem)] lg:h-[calc(100vh-12rem)] overflow-y-auto">
-              <div 
-                className={`transition-all duration-300 h-full ${
-                  isAnimating ? 'opacity-0 transform translate-x-4' : 'opacity-100 transform translate-x-0'
-                }`}
-              >
-                {renderSlide(slides[currentSlide])}
-              </div>
-            </div>
+          <div 
+            className={`transition-all duration-300 ${
+              isAnimating ? 'opacity-0 transform translate-x-4' : 'opacity-100 transform translate-x-0'
+            }`}
+          >
+            {renderSlide(slides[currentSlide])}
           </div>
         </div>
       </div>
 
       {/* Bottom navigation dots */}
-      <div className="fixed bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 z-50">
-        <div className="flex flex-wrap justify-center gap-1 sm:gap-2 bg-white/80 backdrop-blur-sm rounded-full px-2 sm:px-4 py-1 sm:py-2 shadow-lg max-w-xs sm:max-w-none overflow-x-auto">
+      <div className="fixed bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-50">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 bg-white/90 backdrop-blur-sm rounded-full px-3 sm:px-6 py-2 sm:py-3 shadow-lg max-w-xs sm:max-w-none overflow-x-auto">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-200 flex-shrink-0 ${
+              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-4 lg:h-4 rounded-full transition-all duration-200 flex-shrink-0 ${
                 index === currentSlide 
                   ? 'bg-blue-600 scale-125' 
                   : 'bg-gray-300 hover:bg-gray-400'
