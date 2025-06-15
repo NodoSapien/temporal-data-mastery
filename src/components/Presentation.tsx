@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Database, TrendingUp, Zap, Clock, BarChart3, Globe, CheckCircle, XCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -586,10 +587,10 @@ const Presentation = () => {
         return (
           <div className="flex flex-col justify-center min-h-[70vh] space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">Conclusión</h1>
-            <div className="space-y-4 sm:space-y-6 lg:space-y-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
               {slide.points.map((point: string, index: number) => (
-                <Card key={index} className="p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-shadow">
-                  <CardContent className="flex items-start space-x-4 sm:space-x-6">
+                <Card key={index} className="p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-shadow h-full flex flex-col justify-center">
+                  <CardContent className="flex flex-col items-center text-center space-y-4 sm:space-y-6">
                     <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-500 to-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl lg:text-2xl">
                       {index + 1}
                     </div>
