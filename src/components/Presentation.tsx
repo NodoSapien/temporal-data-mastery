@@ -11,7 +11,8 @@ const Presentation = () => {
   const slides = [
     {
       id: 1,
-      title: "InfluxDB: La Base de Datos Líder en Series Temporales",
+      titleLine1: "InfluxDB:",
+      titleLine2: "La Base de Datos Líder en Series Temporales",
       subtitle: "Revolucionando el manejo de datos temporales",
       type: "title"
     },
@@ -268,9 +269,14 @@ const Presentation = () => {
               <Database className="w-16 h-16 text-blue-600" />
               <Clock className="w-16 h-16 text-green-600" />
             </div>
-            <h1 className="text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              {slide.title}
-            </h1>
+            <div className="space-y-4">
+              <h1 className="text-6xl font-bold text-gray-900 leading-tight">
+                {slide.titleLine1}
+              </h1>
+              <h2 className="text-5xl font-bold text-gray-900 leading-tight">
+                {slide.titleLine2}
+              </h2>
+            </div>
             <p className="text-2xl text-gray-600 max-w-3xl">
               {slide.subtitle}
             </p>
@@ -643,15 +649,19 @@ const Presentation = () => {
         </div>
       </div>
 
-      {/* Main content */}
-      <div className="pt-20 pb-16 px-8">
-        <div className="max-w-7xl mx-auto">
-          <div 
-            className={`transition-all duration-300 ${
-              isAnimating ? 'opacity-0 transform translate-x-4' : 'opacity-100 transform translate-x-0'
-            }`}
-          >
-            {renderSlide(slides[currentSlide])}
+      {/* Main content with 16:10 aspect ratio */}
+      <div className="pt-20 pb-16 px-8 flex items-center justify-center min-h-screen">
+        <div className="w-full max-w-7xl mx-auto">
+          <div className="w-full aspect-[16/10] bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="h-full p-8 overflow-y-auto">
+              <div 
+                className={`transition-all duration-300 h-full ${
+                  isAnimating ? 'opacity-0 transform translate-x-4' : 'opacity-100 transform translate-x-0'
+                }`}
+              >
+                {renderSlide(slides[currentSlide])}
+              </div>
+            </div>
           </div>
         </div>
       </div>
