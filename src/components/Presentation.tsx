@@ -1,9 +1,9 @@
+
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Database, Download } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Database } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SlideRenderer from './slides/SlideRenderer';
 import { slidesData } from '@/data/slidesData';
-import { generatePDF } from '@/utils/pdfGenerator';
 
 const Presentation = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -41,12 +41,6 @@ const Presentation = () => {
     }
   };
 
-  const handleDownloadPDF = () => {
-    const slideTitle = slides[currentSlide]?.title || 'slide';
-    const filename = `${slideTitle.replace(/[^a-zA-Z0-9]/g, '_')}_${currentSlide + 1}.pdf`;
-    generatePDF('current-slide', filename);
-  };
-
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight') nextSlide();
@@ -72,16 +66,6 @@ const Presentation = () => {
               {currentSlide + 1} / {slides.length}
             </span>
             <div className="flex space-x-1 sm:space-x-2">
-              <Button 
-                onClick={handleDownloadPDF}
-                variant="outline"
-                size="sm"
-                className="h-8 w-8 sm:h-10 sm:w-auto p-1 sm:px-3"
-                title="Descargar diapositiva actual como PDF"
-              >
-                <Download className="w-4 h-4" />
-                <span className="hidden sm:inline ml-1">PDF</span>
-              </Button>
               <Button 
                 onClick={prevSlide} 
                 disabled={currentSlide === 0}
@@ -111,7 +95,6 @@ const Presentation = () => {
       <div className="pt-16 sm:pt-20 pb-20 sm:pb-24">
         <div className="w-full max-w-7xl mx-auto">
           <div 
-            id="current-slide"
             className={`transition-all duration-300 ${
               isAnimating ? 'opacity-0 transform translate-x-4' : 'opacity-100 transform translate-x-0'
             }`}
