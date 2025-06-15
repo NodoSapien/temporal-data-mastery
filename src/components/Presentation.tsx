@@ -652,7 +652,7 @@ const Presentation = () => {
       {/* Main content with 16:10 aspect ratio */}
       <div className="pt-20 pb-16 px-8 flex items-center justify-center min-h-screen">
         <div className="w-full max-w-7xl mx-auto">
-          <div className="w-full aspect-[16/10] bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="w-full aspect-[16/10] overflow-hidden">
             <div className="h-full p-8 overflow-y-auto">
               <div 
                 className={`transition-all duration-300 h-full ${
