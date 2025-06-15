@@ -1,6 +1,4 @@
 
-import { Zap, Database, TrendingUp, BarChart3, Globe } from 'lucide-react';
-
 export const slidesData = [
   {
     id: 1,
@@ -100,7 +98,7 @@ export const slidesData = [
     categories: [
       {
         title: "Técnicas",
-        icon: <Zap className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />,
+        iconName: "zap",
         advantages: [
           "Millones de puntos por segundo",
           "Compresión automática hasta 90%",
@@ -111,7 +109,7 @@ export const slidesData = [
       },
       {
         title: "Operacionales",
-        icon: <Database className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />,
+        iconName: "database",
         advantages: [
           "Instalación simple - binario único",
           "Web UI integrada",
@@ -122,7 +120,7 @@ export const slidesData = [
       },
       {
         title: "Desarrollo",
-        icon: <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />,
+        iconName: "trending-up",
         advantages: [
           "Sintaxis SQL-like familiar",
           "SDKs para todos los lenguajes",
@@ -140,17 +138,17 @@ export const slidesData = [
     cases: [
       {
         title: "Monitoreo y Observabilidad",
-        icon: <BarChart3 className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />,
+        iconName: "bar-chart-3",
         examples: ["Métricas de aplicaciones", "Logs de rendimiento", "Monitoreo de infraestructura", "APM"]
       },
       {
         title: "Internet of Things (IoT)",
-        icon: <Globe className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />,
+        iconName: "globe",
         examples: ["Datos de sensores", "Telemetría de dispositivos", "Análisis de patrones", "Alertas en tiempo real"]
       },
       {
         title: "Análisis de Negocio",
-        icon: <TrendingUp className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />,
+        iconName: "trending-up",
         examples: ["Métricas de KPI", "Análisis de tendencias", "Reporting temporal", "Business Intelligence"]
       }
     ],

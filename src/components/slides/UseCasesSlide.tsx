@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { BarChart3, Globe, TrendingUp } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface UseCasesSlideProps {
@@ -7,11 +8,25 @@ interface UseCasesSlideProps {
     title: string;
     cases: Array<{
       title: string;
-      icon: React.ReactNode;
+      iconName: string;
       examples: string[];
     }>;
   };
 }
+
+const getIcon = (iconName: string) => {
+  const iconProps = { className: "w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" };
+  switch (iconName) {
+    case 'bar-chart-3':
+      return <BarChart3 {...iconProps} />;
+    case 'globe':
+      return <Globe {...iconProps} />;
+    case 'trending-up':
+      return <TrendingUp {...iconProps} />;
+    default:
+      return <BarChart3 {...iconProps} />;
+  }
+};
 
 const UseCasesSlide: React.FC<UseCasesSlideProps> = ({ slide }) => {
   return (
@@ -22,7 +37,7 @@ const UseCasesSlide: React.FC<UseCasesSlideProps> = ({ slide }) => {
           <Card key={index} className="p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-shadow">
             <CardHeader className="text-center pb-4 sm:pb-6">
               <div className="mx-auto p-3 sm:p-4 lg:p-6 bg-gradient-to-br from-blue-500 to-green-500 rounded-full text-white mb-4 sm:mb-6 w-fit">
-                {useCase.icon}
+                {getIcon(useCase.iconName)}
               </div>
               <CardTitle className="text-xl sm:text-2xl lg:text-3xl text-center">{useCase.title}</CardTitle>
             </CardHeader>

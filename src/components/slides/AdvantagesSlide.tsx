@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Zap, Database, TrendingUp } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface AdvantagesSlideProps {
@@ -8,11 +8,25 @@ interface AdvantagesSlideProps {
     title: string;
     categories: Array<{
       title: string;
-      icon: React.ReactNode;
+      iconName: string;
       advantages: string[];
     }>;
   };
 }
+
+const getIcon = (iconName: string) => {
+  const iconProps = { className: "w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" };
+  switch (iconName) {
+    case 'zap':
+      return <Zap {...iconProps} />;
+    case 'database':
+      return <Database {...iconProps} />;
+    case 'trending-up':
+      return <TrendingUp {...iconProps} />;
+    default:
+      return <Zap {...iconProps} />;
+  }
+};
 
 const AdvantagesSlide: React.FC<AdvantagesSlideProps> = ({ slide }) => {
   return (
@@ -24,7 +38,7 @@ const AdvantagesSlide: React.FC<AdvantagesSlideProps> = ({ slide }) => {
             <CardHeader className="pb-2 sm:pb-3">
               <CardTitle className="flex items-center justify-center space-x-3 sm:space-x-4 text-lg sm:text-xl lg:text-2xl">
                 <div className="p-2 sm:p-3 lg:p-4 bg-blue-100 rounded-lg text-blue-600 flex-shrink-0">
-                  {category.icon}
+                  {getIcon(category.iconName)}
                 </div>
                 <span>Ventajas {category.title}</span>
               </CardTitle>
