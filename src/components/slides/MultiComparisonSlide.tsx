@@ -17,7 +17,7 @@ const MultiComparisonSlide: React.FC<MultiComparisonSlideProps> = ({
   return <div className="space-y-4 sm:space-y-6 lg:space-y-8 px-4 py-8 sm:py-12">
       <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 text-center px-0 my-[26px] xl:text-5xl">{slide.title}</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
-        {slide.comparisons.map((comparison: any, index: number) => <Card key={index} className="p-3 sm:p-4 lg:p-6">
+        {slide.comparisons.map((comparison: any, index: number) => <Card key={index} className="p-3 sm:p-4 lg:p-6 py-[50px]">
             <CardHeader className="pb-2 sm:pb-3">
               <CardTitle className="text-base sm:text-lg text-blue-600 text-center lg:text-4xl">{comparison.title}</CardTitle>
             </CardHeader>
