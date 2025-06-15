@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -21,16 +22,16 @@ const ComparisonSlide: React.FC<ComparisonSlideProps> = ({
           <table className="w-full min-w-[600px]">
             <thead>
               <tr className="border-b-2 border-gray-200">
-                {slide.comparison.headers.map((header: string, index: number) => <th key={index} className="text-center p-3 sm:p-4 lg:p-6 font-semibold text-lg sm:text-xl lg:text-2xl">
+                {slide.comparison.headers.map((header: string, index: number) => <th key={index} className="text-center p-3 sm:p-4 lg:p-6 font-semibold text-sm sm:text-base lg:text-lg">
                     {header}
                   </th>)}
               </tr>
             </thead>
             <tbody>
               {slide.comparison.rows.map((row: string[], index: number) => <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
-                  <td className="p-3 sm:p-4 lg:p-6 font-medium text-gray-900 text-base sm:text-lg lg:text-xl text-center">{row[0]}</td>
-                  <td className="p-3 sm:p-4 lg:p-6 text-blue-600 font-medium text-base sm:text-lg lg:text-xl text-center">{row[1]}</td>
-                  <td className="p-3 sm:p-4 lg:p-6 text-gray-600 text-base sm:text-lg lg:text-xl text-center">{row[2]}</td>
+                  <td className="p-3 sm:p-4 lg:p-6 font-medium text-gray-900 text-xs sm:text-sm lg:text-base text-center">{row[0]}</td>
+                  <td className="p-3 sm:p-4 lg:p-6 text-blue-600 font-medium text-xs sm:text-sm lg:text-base text-center">{row[1]}</td>
+                  <td className="p-3 sm:p-4 lg:p-6 text-gray-600 text-xs sm:text-sm lg:text-base text-center">{row[2]}</td>
                 </tr>)}
             </tbody>
           </table>
