@@ -28,7 +28,7 @@ const ConclusionSlide: React.FC<ConclusionSlideProps> = ({
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 xl:text-4xl">InfluxDB</h2>
           <Clock className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-green-600" />
         </div>
-        <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-gray-600 mt-4 sm:mt-6">El futuro de las bases de datos temporales</p>
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 mt-4 sm:mt-6 xl:text-2xl">El futuro de las bases de datos temporales</p>
       </div>
     </div>;
 };
