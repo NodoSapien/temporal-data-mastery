@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Database, TrendingUp, Zap, Clock, BarChart3, Globe, CheckCircle, XCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -397,6 +396,54 @@ const Presentation = () => {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        );
+
+      case 'multi-comparison':
+        return (
+          <div className="space-y-8">
+            <h1 className="text-4xl font-bold text-gray-900 mb-8">{slide.title}</h1>
+            <div className="grid gap-6">
+              {slide.comparisons.map((comparison: any, index: number) => (
+                <Card key={index} className="p-6">
+                  <CardHeader>
+                    <CardTitle className="text-2xl text-blue-600">{comparison.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-blue-600 flex items-center space-x-2">
+                          <Database className="w-5 h-5" />
+                          <span>InfluxDB</span>
+                        </h4>
+                        <ul className="space-y-2">
+                          {comparison.influx.map((item: string, idx: number) => (
+                            <li key={idx} className="flex items-start space-x-3">
+                              <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-700 text-sm">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-gray-600 flex items-center space-x-2">
+                          <Database className="w-5 h-5" />
+                          <span>{comparison.title.replace("vs ", "")}</span>
+                        </h4>
+                        <ul className="space-y-2">
+                          {comparison.other.map((item: string, idx: number) => (
+                            <li key={idx} className="flex items-start space-x-3">
+                              <div className="w-4 h-4 border-2 border-gray-400 rounded-full mt-0.5 flex-shrink-0"></div>
+                              <span className="text-gray-600 text-sm">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         );
 
