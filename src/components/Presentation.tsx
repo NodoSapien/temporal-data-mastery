@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Database, TrendingUp, Zap, Clock, BarChart3, Globe, CheckCircle, XCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -594,7 +593,7 @@ const Presentation = () => {
                     <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-500 to-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl lg:text-2xl">
                       {index + 1}
                     </div>
-                    <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-gray-700 leading-relaxed">{point}</p>
+                    <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-700 leading-relaxed">{point}</p>
                   </CardContent>
                 </Card>
               ))}
