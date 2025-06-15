@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -17,7 +16,7 @@ const ComparisonSlide: React.FC<ComparisonSlideProps> = ({
 }) => {
   return <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
       <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">{slide.title}</h1>
-      <Card className="p-4 sm:p-6 lg:p-8 py-0 px-[10px]">
+      <Card className="p-4 sm:p-6 lg:p-8 py-0 px-0">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[600px]">
             <thead>
