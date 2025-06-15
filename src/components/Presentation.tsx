@@ -615,7 +615,7 @@ const Presentation = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-25">
       {/* Header with navigation */}
       <div className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 p-4">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
