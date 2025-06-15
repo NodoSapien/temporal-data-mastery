@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Database, TrendingUp, Zap, Clock, BarChart3, Globe, CheckCircle, XCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -291,11 +292,11 @@ const Presentation = () => {
       case 'content':
         return (
           <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-8 sm:mb-12">{slide.title}</h1>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">{slide.title}</h1>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
               <Card className="p-4 sm:p-6 lg:p-8">
                 <CardHeader className="pb-4 sm:pb-6">
-                  <CardTitle className="flex items-center space-x-3 text-xl sm:text-2xl lg:text-3xl">
+                  <CardTitle className="flex items-center justify-center space-x-3 text-xl sm:text-2xl lg:text-3xl text-center">
                     <Database className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-blue-600 flex-shrink-0" />
                     <span>Descripción</span>
                   </CardTitle>
@@ -313,7 +314,7 @@ const Presentation = () => {
               </Card>
               <Card className="p-4 sm:p-6 lg:p-8">
                 <CardHeader className="pb-4 sm:pb-6">
-                  <CardTitle className="flex items-center space-x-3 text-xl sm:text-2xl lg:text-3xl">
+                  <CardTitle className="flex items-center justify-center space-x-3 text-xl sm:text-2xl lg:text-3xl text-center">
                     <Zap className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-green-600 flex-shrink-0" />
                     <span>Características Clave</span>
                   </CardTitle>
@@ -336,12 +337,12 @@ const Presentation = () => {
       case 'detailed':
         return (
           <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-8 sm:mb-12">{slide.title}</h1>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">{slide.title}</h1>
             <div className="grid gap-6 sm:gap-8 lg:gap-12">
               {slide.sections.map((section: any, index: number) => (
                 <Card key={index} className="p-4 sm:p-6 lg:p-8">
                   <CardHeader className="pb-4 sm:pb-6">
-                    <CardTitle className="text-xl sm:text-2xl lg:text-3xl text-blue-600">{section.title}</CardTitle>
+                    <CardTitle className="text-xl sm:text-2xl lg:text-3xl text-blue-600 text-center">{section.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
@@ -362,14 +363,14 @@ const Presentation = () => {
       case 'comparison':
         return (
           <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 sm:mb-12">{slide.title}</h1>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">{slide.title}</h1>
             <Card className="p-4 sm:p-6 lg:p-8">
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[600px]">
                   <thead>
                     <tr className="border-b-2 border-gray-200">
                       {slide.comparison.headers.map((header: string, index: number) => (
-                        <th key={index} className="text-left p-3 sm:p-4 lg:p-6 font-semibold text-lg sm:text-xl lg:text-2xl">
+                        <th key={index} className="text-center p-3 sm:p-4 lg:p-6 font-semibold text-lg sm:text-xl lg:text-2xl">
                           {header}
                         </th>
                       ))}
@@ -378,9 +379,9 @@ const Presentation = () => {
                   <tbody>
                     {slide.comparison.rows.map((row: string[], index: number) => (
                       <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
-                        <td className="p-3 sm:p-4 lg:p-6 font-medium text-gray-900 text-base sm:text-lg lg:text-xl">{row[0]}</td>
-                        <td className="p-3 sm:p-4 lg:p-6 text-blue-600 font-medium text-base sm:text-lg lg:text-xl">{row[1]}</td>
-                        <td className="p-3 sm:p-4 lg:p-6 text-gray-600 text-base sm:text-lg lg:text-xl">{row[2]}</td>
+                        <td className="p-3 sm:p-4 lg:p-6 font-medium text-gray-900 text-base sm:text-lg lg:text-xl text-center">{row[0]}</td>
+                        <td className="p-3 sm:p-4 lg:p-6 text-blue-600 font-medium text-base sm:text-lg lg:text-xl text-center">{row[1]}</td>
+                        <td className="p-3 sm:p-4 lg:p-6 text-gray-600 text-base sm:text-lg lg:text-xl text-center">{row[2]}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -389,7 +390,7 @@ const Presentation = () => {
             </Card>
             <Card className="p-4 sm:p-6 lg:p-8 bg-green-50">
               <CardHeader className="pb-4 sm:pb-6">
-                <CardTitle className="text-green-800 text-xl sm:text-2xl lg:text-3xl">Ventajas Clave de InfluxDB</CardTitle>
+                <CardTitle className="text-green-800 text-xl sm:text-2xl lg:text-3xl text-center">Ventajas Clave de InfluxDB</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
@@ -408,17 +409,17 @@ const Presentation = () => {
       case 'multi-comparison':
         return (
           <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 sm:mb-12">{slide.title}</h1>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">{slide.title}</h1>
             <div className="grid gap-6 sm:gap-8">
               {slide.comparisons.map((comparison: any, index: number) => (
                 <Card key={index} className="p-4 sm:p-6 lg:p-8">
                   <CardHeader className="pb-4 sm:pb-6">
-                    <CardTitle className="text-xl sm:text-2xl lg:text-3xl text-blue-600">{comparison.title}</CardTitle>
+                    <CardTitle className="text-xl sm:text-2xl lg:text-3xl text-blue-600 text-center">{comparison.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                       <div className="space-y-3 sm:space-y-4">
-                        <h4 className="font-semibold text-blue-600 flex items-center space-x-2 text-lg sm:text-xl lg:text-2xl">
+                        <h4 className="font-semibold text-blue-600 flex items-center justify-center space-x-2 text-lg sm:text-xl lg:text-2xl">
                           <Database className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 flex-shrink-0" />
                           <span>InfluxDB</span>
                         </h4>
@@ -432,7 +433,7 @@ const Presentation = () => {
                         </ul>
                       </div>
                       <div className="space-y-3 sm:space-y-4">
-                        <h4 className="font-semibold text-gray-600 flex items-center space-x-2 text-lg sm:text-xl lg:text-2xl">
+                        <h4 className="font-semibold text-gray-600 flex items-center justify-center space-x-2 text-lg sm:text-xl lg:text-2xl">
                           <Database className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 flex-shrink-0" />
                           <span>{comparison.title.replace("vs ", "")}</span>
                         </h4>
@@ -456,12 +457,12 @@ const Presentation = () => {
       case 'advantages':
         return (
           <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 sm:mb-12">{slide.title}</h1>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">{slide.title}</h1>
             <div className="grid gap-6 sm:gap-8">
               {slide.categories.map((category: any, index: number) => (
                 <Card key={index} className="p-4 sm:p-6 lg:p-8">
                   <CardHeader className="pb-4 sm:pb-6">
-                    <CardTitle className="flex items-center space-x-3 sm:space-x-4 text-xl sm:text-2xl lg:text-3xl">
+                    <CardTitle className="flex items-center justify-center space-x-3 sm:space-x-4 text-xl sm:text-2xl lg:text-3xl">
                       <div className="p-2 sm:p-3 lg:p-4 bg-blue-100 rounded-lg text-blue-600 flex-shrink-0">
                         {category.icon}
                       </div>
@@ -487,7 +488,7 @@ const Presentation = () => {
       case 'use-cases':
         return (
           <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 sm:mb-12">{slide.title}</h1>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">{slide.title}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {slide.cases.map((useCase: any, index: number) => (
                 <Card key={index} className="p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-shadow">
@@ -495,7 +496,7 @@ const Presentation = () => {
                     <div className="mx-auto p-3 sm:p-4 lg:p-6 bg-gradient-to-br from-blue-500 to-green-500 rounded-full text-white mb-4 sm:mb-6 w-fit">
                       {useCase.icon}
                     </div>
-                    <CardTitle className="text-xl sm:text-2xl lg:text-3xl">{useCase.title}</CardTitle>
+                    <CardTitle className="text-xl sm:text-2xl lg:text-3xl text-center">{useCase.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2 sm:space-y-3">
@@ -516,11 +517,11 @@ const Presentation = () => {
       case 'decision':
         return (
           <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 sm:mb-12">{slide.title}</h1>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">{slide.title}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
               <Card className="p-4 sm:p-6 lg:p-8 border-green-200 bg-green-50">
                 <CardHeader className="pb-4 sm:pb-6">
-                  <CardTitle className="flex items-center space-x-3 text-green-800 text-xl sm:text-2xl lg:text-3xl">
+                  <CardTitle className="flex items-center justify-center space-x-3 text-green-800 text-xl sm:text-2xl lg:text-3xl">
                     <CheckCircle className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 flex-shrink-0" />
                     <span>Cuándo SÍ usar InfluxDB</span>
                   </CardTitle>
@@ -538,7 +539,7 @@ const Presentation = () => {
               </Card>
               <Card className="p-4 sm:p-6 lg:p-8 border-red-200 bg-red-50">
                 <CardHeader className="pb-4 sm:pb-6">
-                  <CardTitle className="flex items-center space-x-3 text-red-800 text-xl sm:text-2xl lg:text-3xl">
+                  <CardTitle className="flex items-center justify-center space-x-3 text-red-800 text-xl sm:text-2xl lg:text-3xl">
                     <XCircle className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 flex-shrink-0" />
                     <span>Cuándo considerar alternativas</span>
                   </CardTitle>
@@ -561,15 +562,15 @@ const Presentation = () => {
       case 'future':
         return (
           <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 sm:mb-12">{slide.title}</h1>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">{slide.title}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {slide.future.map((item: any, index: number) => (
                 <Card key={index} className="p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-shadow">
                   <CardHeader className="pb-4 sm:pb-6">
-                    <CardTitle className="text-xl sm:text-2xl lg:text-3xl text-blue-600">{item.title}</CardTitle>
+                    <CardTitle className="text-xl sm:text-2xl lg:text-3xl text-blue-600 text-center">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-700 text-base sm:text-lg lg:text-xl">{item.description}</p>
+                    <p className="text-gray-700 text-base sm:text-lg lg:text-xl text-center">{item.description}</p>
                   </CardContent>
                 </Card>
               ))}
