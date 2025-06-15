@@ -27,7 +27,7 @@ const FutureSlide: React.FC<FutureSlideProps> = ({
       </div>
       <Card className="p-4 sm:p-6 lg:p-8 bg-gradient-to-r from-blue-500 to-green-500 text-white">
         <CardContent className="text-center">
-          <p className="text-xl sm:text-2xl lg:text-3xl font-semibold">{slide.stats}</p>
+          <p className="text-xl sm:text-2xl font-semibold lg:text-2xl">{slide.stats}</p>
         </CardContent>
       </Card>
     </div>;
