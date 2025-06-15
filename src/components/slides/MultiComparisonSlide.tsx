@@ -31,7 +31,7 @@ const MultiComparisonSlide: React.FC<MultiComparisonSlideProps> = ({
                   <ul className="space-y-1 sm:space-y-2">
                     {comparison.influx.map((item: string, idx: number) => <li key={idx} className="flex items-start space-x-2 sm:space-x-3">
                         <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700 text-xs sm:text-sm lg:text-base">{item}</span>
+                        <span className="text-gray-700 text-xs sm:text-sm lg:text-lg">{item}</span>
                       </li>)}
                   </ul>
                 </div>
