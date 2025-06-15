@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Database, TrendingUp, Zap, Clock, BarChart3, Globe, CheckCircle, XCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -589,11 +588,11 @@ const Presentation = () => {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">Conclusión</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
               {slide.points.map((point: string, index: number) => (
-                <Card key={index} className="p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-shadow h-full flex flex-col justify-center">
-                  <CardContent className="flex flex-col items-center text-center space-y-4 sm:space-y-6">
-                    <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-500 to-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl lg:text-2xl">
-                      {index + 1}
-                    </div>
+                <Card key={index} className="p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-shadow h-full flex flex-col justify-center relative">
+                  <div className="absolute top-2 right-2 w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-blue-500 to-green-500 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm">
+                    {index + 1}
+                  </div>
+                  <CardContent className="flex items-center justify-center text-center">
                     <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-700 leading-relaxed">{point}</p>
                   </CardContent>
                 </Card>
