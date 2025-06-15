@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -16,21 +17,21 @@ const ComparisonSlide: React.FC<ComparisonSlideProps> = ({
 }) => {
   return <div className="space-y-6 sm:space-y-8 lg:space-y-12 px-4 py-8 sm:py-12">
       <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">{slide.title}</h1>
-      <Card className="p-4 sm:p-6 lg:p-8 py-0 px-0">
+      <Card className="p-2 sm:p-3 lg:p-4">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[600px]">
             <thead>
               <tr className="border-b-2 border-gray-200">
-                {slide.comparison.headers.map((header: string, index: number) => <th key={index} className="text-center p-3 sm:p-4 lg:p-6 font-semibold text-sm sm:text-base lg:text-lg">
+                {slide.comparison.headers.map((header: string, index: number) => <th key={index} className="text-center p-2 sm:p-3 lg:p-4 font-semibold text-xs sm:text-sm lg:text-base">
                     {header}
                   </th>)}
               </tr>
             </thead>
             <tbody>
               {slide.comparison.rows.map((row: string[], index: number) => <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
-                  <td className="p-3 sm:p-4 lg:p-6 font-medium text-gray-900 text-xs sm:text-sm lg:text-base text-center">{row[0]}</td>
-                  <td className="p-3 sm:p-4 lg:p-6 text-blue-600 font-medium text-xs sm:text-sm lg:text-base text-center">{row[1]}</td>
-                  <td className="p-3 sm:p-4 lg:p-6 text-gray-600 text-xs sm:text-sm lg:text-base text-center">{row[2]}</td>
+                  <td className="p-2 sm:p-3 lg:p-4 font-medium text-gray-900 text-xs sm:text-sm lg:text-base text-center">{row[0]}</td>
+                  <td className="p-2 sm:p-3 lg:p-4 text-blue-600 font-medium text-xs sm:text-sm lg:text-base text-center">{row[1]}</td>
+                  <td className="p-2 sm:p-3 lg:p-4 text-gray-600 text-xs sm:text-sm lg:text-base text-center">{row[2]}</td>
                 </tr>)}
             </tbody>
           </table>
